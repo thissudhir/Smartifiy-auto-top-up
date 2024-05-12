@@ -180,7 +180,7 @@ const marks: Mark[] = [
     label: (
       <>
         <Typography sx={styles.markLabelStyles}>$10 </Typography>
-        {/* <span style={styles.markSpanLableStyle}>1200 credits</span> */}
+        <span style={styles.markSpanLableStyle}>1200 credits</span>
       </>
     ),
   },
@@ -189,7 +189,7 @@ const marks: Mark[] = [
     label: (
       <>
         <Typography sx={styles.markLabelStyles}>$15 </Typography>
-        {/* <span style={styles.markSpanLableStyle}>1700 credits</span> */}
+        <span style={styles.markSpanLableStyle}>1700 credits</span>
       </>
     ),
   },
@@ -198,7 +198,7 @@ const marks: Mark[] = [
     label: (
       <>
         <Typography sx={styles.markLabelStyles}>$20 </Typography>
-        {/* <span style={styles.markSpanLableStyle}>2500 credits</span> */}
+        <span style={styles.markSpanLableStyle}>2500 credits</span>
       </>
     ),
   },
@@ -207,7 +207,7 @@ const marks: Mark[] = [
     label: (
       <>
         <Typography sx={styles.markLabelStyles}>$25 </Typography>
-        {/* <span style={styles.markSpanLableStyle}>3900 credits</span> */}
+        <span style={styles.markSpanLableStyle}>3900 credits</span>
       </>
     ),
   },
@@ -216,7 +216,7 @@ const marks: Mark[] = [
     label: (
       <>
         <Typography sx={styles.markLabelStyles}>$30 </Typography>
-        {/* <span style={styles.markSpanLableStyle}>5000 credits</span> */}
+        <span style={styles.markSpanLableStyle}>5000 credits</span>
       </>
     ),
   },

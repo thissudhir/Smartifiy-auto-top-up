@@ -2,7 +2,7 @@
 
 ## Objective
 
-The objective of this project is to build a React component that replicates the functionality and appearance of the auto top-up settings interface provided in the reference.
+The objective of this project is to build a React component that replicates the functionality and appearance of the auto top-up settings interface provided in the [reference](https://www.figma.com/file/gmPF9wCZsPTVIzLnCU39m6/Assignment-%231?type=design&node-id=0-1&mode=design&t=6ocwalrOMm02dq1G-0).
 
 ## Features
 
@@ -18,53 +18,34 @@ The objective of this project is to build a React component that replicates the 
 
 ### 3. Slider and Credits Logic
 
-- Connects the slider so that as it moves, it updates a display of the associated credits and price.
-- Ensures that the slider snaps to the predefined credit values as shown in the reference.
+- Connected the slider so that as it moves, it updates a display of the associated credits and price.
 
 ### 4. Auto Top-up Functionality
 
 - Displays the auto top-up settings when the switch is toggled on, and hides them when off.
-- Prints the selected credit amount to the console when the "Confirm auto-purchase" button is clicked.
+- Printed the selected credit amount to the console when the "Confirm auto-purchase" button is clicked.
 
 ### 5. Styling
 
-- Styles the component using Material-UI's styling solution to closely match the provided design.
-- Pays attention to the color scheme, spacing, and typography to ensure the UI is as close to the provided design as possible.
+- Styled the component using Material-UI's styling solution to closely match the provided design.
 
 ## Usage
 
 To use this component in a React application, follow these steps:
 
-1. Install Material-UI if not already installed:
+1. Clone this repo to yoour local system:
    ```bash
-   npm install @mui/material @emotion/react @emotion/styled
+   git clone https://github.com/thissudhir/Smartifiy-auto-top-up .
    ```
-2. Copy the `TopUp.tsx` file into your project's components directory.
-3. Import the `TopUp` component into your desired React component.
-4. Place the `TopUp` component in your JSX markup where you want to display the auto top-up settings interface.
-
-```jsx
-import React from "react";
-import TopUp from "./components/TopUp";
-
-function App() {
-  return (
-    <div className="App">
-      <TopUp />
-    </div>
-  );
-}
-
-export default App;
-```
+2. Open terminal and run command `npm install`.
+3. After that run command `npm run dev`.
+4. This will start a server at localhost:
 
 ## Screenshots
 
-[Insert screenshots of the auto top-up settings interface here]
-
 ## Credits
 
-This project was created by Abhishek. Special thanks to [Material-UI](https://mui.com/) for providing the components used in this project.
+This project was created by [Abhishek](https://github.com/thissudhir/).
 
 ## License
 
