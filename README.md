@@ -64,7 +64,7 @@ export default App;
 
 ## Credits
 
-This project was created by [Your Name]. Special thanks to [Material-UI](https://mui.com/) for providing the components used in this project.
+This project was created by Abhishek. Special thanks to [Material-UI](https://mui.com/) for providing the components used in this project.
 
 ## License
 
