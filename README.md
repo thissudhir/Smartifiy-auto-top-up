@@ -43,6 +43,8 @@ To use this component in a React application, follow these steps:
 
 ## Screenshots
 
+![Toggled off](image.png)
+
 ## Credits
 
 This project was created by [Abhishek](https://github.com/thissudhir/).

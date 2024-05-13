@@ -33,7 +33,7 @@ const styles: Styles = {
     flexDirection: "column",
     // width: "1030px",
     // height: "588px",
-    top: "-693px",
+    // top: "-693px",
     // left: "292px",
     gap: "0px",
     border: "1px 0px 0px 0px",
@@ -89,15 +89,16 @@ const styles: Styles = {
     fontFamily: "Poppins",
     fontSize: "16px",
     fontWeight: 700,
-    // lineHeight: "24px",
-    // textAlign: "center",
+    lineHeight: "24px",
+    textAlign: "left",
+    // Set the font color
   },
   markSpanLableStyle: {
     fontFamily: "Poppins",
     fontSize: "16px",
     fontWeight: 500,
-    // lineHeight: "24px",
-    // textAlign: "right",
+    lineHeight: "24px",
+    textAlign: "left",
     color: "#7B7B7B",
   },
 };
@@ -154,12 +155,6 @@ const IOSSwitch = styled((props: SwitchProps) => (
   },
 }));
 
-const renderLabel = (value, labelText) => (
-  <>
-    <Typography sx={styles.markLabelStyles}>${value} </Typography>
-    <span style={styles.markSpanLableStyle}>{labelText}</span>
-  </>
-);
 //LABEL FOR THE SLIDER
 interface Mark {
   value: number;
@@ -216,7 +211,7 @@ const marks: Mark[] = [
     label: (
       <>
         <Typography sx={styles.markLabelStyles}>$30 </Typography>
-        <span style={styles.markSpanLableStyle}>5000 credits</span>
+        <span style={styles.markSpanLableStyle}>500 credits</span>
       </>
     ),
   },
@@ -262,8 +257,7 @@ const IOSSlider = styled(Slider)(({ theme }) => ({
   },
 }));
 const TopUp = () => {
-  const [rate, setRate] = useState(1200);
-  // const [autoTopUp, setAutoTopUp] = useState(true);
+  const [rate, setRate] = useState(10);
   const [toggle, setToggle] = useState(false);
   const handleClick = () => {
     // setRate(rate)
@@ -271,79 +265,63 @@ const TopUp = () => {
     // console.log(marks);
   };
   return (
-    <Grid justifyContent="center">
-      <Grid item xs={18} md={6}>
-        <Box sx={styles.mainBodyStyle}>
-          {!toggle ? (
-            <Box sx={styles.firstBodyStyle}>
-              <Typography variant="h4" sx={styles.titleStyle}>
-                Setup Auto Top-up{" "}
-                <IOSSwitch
-                  sx={{ m: 1 }}
-                  onClick={() => {
-                    setToggle(true);
-                  }}
-                />
-              </Typography>
-              <Typography variant="body1" sx={styles.subtitleStyle}>
-                Once the credit goes below the threshold value, credits can be
-                auto purchased. Setup auto top-up to enjoy uninterrupted
-                services. You can disable this anytime to stop auto top-up.
-              </Typography>
-            </Box>
-          ) : (
-            <Box sx={styles.secondBodyStyle}>
-              <Typography variant="h4" sx={styles.titleStyle}>
-                Setup Auto Top-up{" "}
-                <IOSSwitch
-                  sx={{ m: 1 }}
-                  onClick={() => {
-                    setToggle(false);
-                  }}
-                  // defaultChecked
-                  // checked={autoTopUp}
-                  // onChange={(e) => setAutoTopUp(e.target.checked)}
-                />
-              </Typography>
-              <Typography variant="body1" sx={styles.subtitleStyle}>
-                Once the credit goes below a minimum threshold{" "}
-                <strong style={{ color: "#9747FF" }}>50</strong>, we will
-                auto-purchase <strong style={{ color: "#9747FF" }}>1200</strong>{" "}
-                credits and add them to your account.{" "}
-                <a href="#" style={styles.linkStyle}>
-                  Learn more
-                </a>
-              </Typography>
-              <IOSSlider
-                marks={marks}
-                step={null}
-                value={rate}
-                defaultValue={10}
-                onChange={(event, newValue) => {
-                  const selectedMark = marks.find(
-                    (mark) => mark.value === newValue
-                  );
-                  if (selectedMark) {
-                    console.log("Value:", newValue);
-                    console.log("Label:", selectedMark.label.props.children);
-                  }
-                  setRate(newValue as number);
-                }}
-                min={5}
-                max={30}
-              />
-              <Button
-                variant="contained"
-                sx={styles.buttonStyle}
-                onClick={handleClick}
-              >
-                Confirm auto-purchases
-              </Button>
-            </Box>
-          )}
+    <Box sx={styles.mainBodyStyle}>
+      {!toggle ? (
+        <Box sx={styles.firstBodyStyle}>
+          <Typography variant="h4" sx={styles.titleStyle}>
+            Setup Auto Top-up{" "}
+            <IOSSwitch
+              sx={{ m: 1 }}
+              onClick={() => {
+                setToggle(true);
+              }}
+            />
+          </Typography>
+          <Typography variant="body1" sx={styles.subtitleStyle}>
+            Once the credit goes below the threshold value, credits can be auto
+            purchased. Setup auto top-up to enjoy uninterrupted services. You
+            can disable this anytime to stop auto top-up.
+          </Typography>
         </Box>
-      </Grid>
-    </Grid>
+      ) : (
+        <Box sx={styles.secondBodyStyle}>
+          <Typography variant="h4" sx={styles.titleStyle}>
+            Setup Auto Top-up{" "}
+            <IOSSwitch
+              sx={{ m: 1 }}
+              onClick={() => {
+                setToggle(false);
+              }}
+            />
+          </Typography>
+          <Typography variant="body1" sx={styles.subtitleStyle}>
+            Once the credit goes below a minimum threshold{" "}
+            <strong style={{ color: "#9747FF" }}>50</strong>, we will
+            auto-purchase <strong style={{ color: "#9747FF" }}>1200</strong>{" "}
+            credits and add them to your account.{" "}
+            <a href="#" style={styles.linkStyle}>
+              Learn more
+            </a>
+          </Typography>
+          <IOSSlider
+            marks={marks}
+            step={null}
+            value={rate}
+            defaultValue={10}
+            onChange={(event, newValue) => setRate(newValue as number)}
+            min={5}
+            max={30}
+          />
+          <Button
+            variant="contained"
+            sx={styles.buttonStyle}
+            onClick={handleClick}
+          >
+            Confirm auto-purchases
+          </Button>
+        </Box>
+      )}
+    </Box>
   );
 };
 
